@@ -22,9 +22,10 @@ public class Server {
             ServerSocket serverSocket=new ServerSocket(port);
             serverSocket.setSoTimeout(10000);
             System.out.println("Server is listening on port:"+port);
+            Server server=new Server();
             while(true){
                 Socket acceptedSocket=serverSocket.accept();
-                Thread thread = new Thread(() -> server.getConsumer().accept(clientSocket));
+                Thread thread = new Thread(() -> server.getConsumer().accept(acceptedSocket));
                 thread.start();
             }
         }catch(Exception e){
