@@ -27,7 +27,6 @@ public class Client {
             client.run();
         }catch(Exception e){
             e.printStackTrace();
-
         }
     }
 }
